@@ -1,0 +1,211 @@
+:root{
+    --btn-fundo: #25D366;
+    --btn-fundo-2: #128C7E;
+    --texto-cor: #FFFFFF;
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../img/wtp.jpg");
+    display: grid;
+    place-items: center;
+}
+
+header{
+    width: 90%;
+    max-width: 60rem;
+    height: 30rem;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+header #box-title {
+    width: 100%;
+    height: 30% ;
+    padding-top: 10px;
+    text-align: center;
+}
+
+header #box-title h1{
+    font-size: 2.4em;
+    text-decoration: underline;
+    color: var(--btn-fundo);
+}
+
+header #box-title h3 {
+    font-size: 1.4em;
+    color: var(--btn-fundo-2);
+}
+
+header #gerador{
+    width: 100%;
+    height: 68%;
+    padding: 10px 5px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+header #gerador #forms {
+    width: 45%;
+    height: 100%;
+    padding: 10px;
+}
+
+header #gerador #forms #tel {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header #gerador #forms #tel #country-box {
+    height: 100%;
+    width: 100px;
+    display: flex;
+    flex-direction: row;
+}
+
+header #gerador #forms #tel #numTel-box {
+    height: 100%;
+    width: 250px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+header #gerador #forms #tel label {
+    margin-right: 10px;
+    width: 20px;
+    height: 30px;
+}
+
+header #gerador #forms #tel label img {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: rgba(136, 133, 133, 0.7);
+}
+
+
+
+header #gerador #forms #tel #country-box input {
+    width: 50px;
+    height: 30px;
+    margin: 0 15px 15px 5px;
+}
+
+header #gerador #forms #tel #numTel-box input {
+    width: 200px;
+    height: 100%;
+    padding-left: 10px;
+}
+
+header #gerador #forms #msg-box {
+    width: 100%;
+    height: 150px;
+    padding: 2px;
+    margin: 15px 0;
+}
+
+header #gerador #forms #msg-box textarea {
+    width: 99%;
+    height: 100%;
+}
+
+header #gerador #forms #btn-box {
+    width: 99%;
+    height: 60px;
+    display: grid;
+    place-items: center;
+}
+
+.btn-gerar {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    border-radius: 10rem;
+    color: var(--texto-cor);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.15rem;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-gerar::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--btn-fundo);
+    border-radius: 10rem;
+    z-index: -2;
+}
+
+.btn-gerar::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--btn-fundo-2);
+    transition: all 0.3s;
+    border-radius: 10rem;
+    z-index: -1;
+}
+
+.btn-gerar:hover {
+    color: #fff;
+}
+
+.btn-gerar:hover::before {
+    width: 100%;
+}
+
+header #gerador #instructs {
+    width: 45%;
+    height: 100%;
+
+}
+
+header #gerador #instructs h2{
+    padding: 2px 0;
+    font-size: 2em;
+    text-decoration: underline;
+    text-align: center;
+}
+
+header #gerador #instructs ol{
+    width: 75%;
+    margin: 10px auto;
+    padding: 2px;
+}
+
+header #gerador #instructs ol li{
+    font-size: 1.2em;
+}
+
+header #gerador #instructs #warning{
+    width: 75%;
+    margin: 30px auto;
+    font-weight: bold;
+    padding: 5px;
+    font-size: 1.1em;
+}
+

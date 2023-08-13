@@ -5,19 +5,86 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>WhatsApp - Gerador de links</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 <body>
 <header>
-    <section id="title">
+    <section id="box-title">
         <h1>WhatsApp</h1>
         <h3>Gere conversas no WhatsApp sem precisar salvar os numeros.</h3>
     </section>
 
-    <section id="forms">
-        
+    <section id="gerador">
+        <div id="forms">
+            <div id="tel">
+                <div id="country-box">
+                    <label for="country"><img src="./assets/img/world.svg"></label>
+                    <input type="text" id="country" name="country" list="countryList" placeholder="DDI" required />
+                    <datalist id="countryList">
+                    </datalist>
+                </div>
+
+                <div id="numTel-box">
+                    <label for="numTel"><img src="./assets/img/phone.svg"></label>
+                    <input type="text" id="numTel" name="numTel" placeholder="Numero de Telefone" required/>
+                </div>
+            </div>
+
+            <div id="msg-box">
+                <textarea id="msgText" name="msgText" rows="5">
+
+                </textarea>
+                <script>
+                    const txtArea = document.getElementById('msgText');
+                    const phText = 'Digite a sua mensagem....';
+
+                    txtArea.value = phText;
+
+                    txtArea.addEventListener('focus', ()=> {
+                        if (txtArea.value === phText) {
+                            txtArea.value = '';
+                        }
+                    });
+
+                    txtArea.addEventListener('blur', ()=> {
+                        if (txtArea.value === '') {
+                            txtArea.value = phText;
+                        }
+                    });
+                </script>
+
+
+            </div>
+
+            <div id="btn-box">
+                <a href="#" class="btn-gerar">Gerar Conversa</a>
+            </div>
+
+        </div>
+
+        <div id="instructs">
+            <h2>Para usar esse gerador</h2>
+            <ol>
+                <li>Selecione o pais ao qual pertence o número</li>
+                <li>Informe o numero</li>
+                <li>Digite uma mensagem (opcional)</li>
+                <li>Clique em gerar</li>
+            </ol>
+
+            <div id="warning">
+                <p>Importante lembrar que esse gerador não cria numeros fakes para conversas no WhatsApp.</p>
+            </div>
+
+
+        </div>
     </section>
 </header>
 
+<script src="./assets/JS/country.js"></script>
+<script src="./assets/JS/geraConversa.js"></script>
 </body>
 </html>
